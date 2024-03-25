@@ -1,0 +1,225 @@
+:root{
+    /* --nombreVariable: valor; */
+    
+    /* font-family: 'Jost', sans-serif; */
+
+    /* colores */
+    --blanco: #FFFFFF;
+    --transparencia: #E6E6E6;
+    --negro: #070201;
+    --grisClaro: #545354;
+    --grisMedio: #343434;
+    --grisFuerte: #2d2d2e;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    text-decoration: none;
+    list-style: none;
+    color: var(--blanco);
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+}
+
+body{
+    background-image: url(../img/instalacionesFondos/patrick-tomasso-GXXYkSwndP4-unsplash_INDEX.png) ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 1024px;
+    position: relative;
+    padding-bottom: 90px;
+    min-height: 100vh;
+}
+
+header{
+    width: 100%;
+    height: 10vh;
+}
+
+nav{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(196, 196, 196, 0.4);
+}
+
+.logo{
+    width: 140px;
+    margin-left: 20px;
+}
+
+.bar-btn{
+    font-size: 25px;
+    color: var(--blanco);
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav-menu{ /* TRRABAJAMOS EL CONTENEDOR DE ENLACES */
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 100px;
+    background-color: rgba(120, 120, 120, 0.9);
+    text-align: center;
+    transition: all .5s;
+}
+
+.nav-menu li{ /* TRABAJAMOS SOBRE LOS LI DE LOS ENLACES */
+    display: none;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+}
+
+.nav-menu li a{ /*  TRABAJAMOS SOBRE CADA ENLACE */
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-menu li a.active, .nav-menu li a:hover{
+    color: var(--grisClaro);
+    transition: .3s;
+}
+
+#check{
+    display: none;
+}
+
+#check:checked ~ .nav-menu{ /* CUANDO EL SE HACE EL CLICK SOBRE EL BOTON */
+    height: 100vh;
+}
+
+#check:checked ~ .nav-menu li{
+    display: block;
+}
+
+.div_bienvenida{
+    color: var(--blanco);
+    background-color: rgba(0, 0, 0, 0.452);
+    max-width: 80%;
+    padding: 100px;
+    border: 1px solid var(--blanco);
+    margin: 100px auto;
+}
+
+.titulo{
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 35px;
+}
+
+.parrafo{
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+/* estilos footer */
+#foot{
+    background-color: rgba(196, 196, 196, 0.4);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    padding: 30px;
+    height: max-content;
+}
+
+.div_derechos_autor{
+    text-align: center;
+}
+
+.div_svgs_redes_sociales{
+    text-align: center;
+}
+
+/* Cuando llegue a 778 o mas pixeles, hace esto */
+@media screen and (min-width: 778px){
+    .logo{
+        margin-left: 30px;
+    }
+    
+    nav{
+        height: 100px;
+    }
+    .bar-btn{ /* desaparece la barrita cuando se agranda */
+        display: none;
+    }
+    .nav-menu{
+        position: relative;
+        height: 100px;
+        top: 0%;
+        background: none;
+        transition: none;
+        text-align: right;
+        margin-right: 40px;
+    }
+
+    .nav-menu li{
+        display: inline-block;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+    }
+
+    .nav-menu li a{
+        font-size: 16px;
+    }
+
+    .titulo{
+        font-size: 60px;
+    }
+    
+    .parrafo{
+        font-size: 40px;
+    }
+
+    #foot{
+        display: flex;
+        padding: 30px;
+        justify-content: space-between;
+    }
+
+    body{
+        height: auto;
+        
+    }
+}
+
+@media screen and (max-width: 415px){
+    .titulo{
+        font-size: 22px;
+    }
+    .parrafo{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 378px){
+
+    h1{
+        text-align: center;
+        width: max-content;
+        margin: auto;
+    }
+
+    .div_bienvenida{
+        justify-content: center;
+        padding: 100px 60px;
+    }
+
+    .titulo{
+        font-size: 30px;
+    }
+    .parrafo{
+        font-size: 20px;
+    }
+
+}
